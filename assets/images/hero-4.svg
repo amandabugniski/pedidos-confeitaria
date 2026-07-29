@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ead0ae"/><stop offset=".55" stop-color="#b76c3b"/><stop offset="1" stop-color="#4d2b22"/></linearGradient>
+    <linearGradient id="table" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#8d5033"/><stop offset="1" stop-color="#3e241d"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="20" stdDeviation="18" flood-opacity=".35"/></filter>
+    <filter id="grain"><feTurbulence baseFrequency=".65" numOctaves="2" seed="3"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect x="0" y="700" width="1600" height="300" fill="url(#table)"/>
+  <g transform="translate(170 300)" filter="url(#shadow)">
+    <ellipse cx="250" cy="350" rx="250" ry="55" fill="#3a2019" opacity=".45"/>
+    <path d="M90 320h320l-45-210H135z" fill="#fff4df"/>
+    <path d="M145 110c30 55 175 55 210 0" fill="#f2a964"/>
+    <path d="M155 250h190" stroke="#d77d42" stroke-width="32" stroke-linecap="round"/>
+    <circle cx="250" cy="180" r="55" fill="#8a4530"/>
+    <path d="M225 175c18-25 42-25 55 0" fill="none" stroke="#f7c383" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(700 390)" filter="url(#shadow)">
+    <ellipse cx="210" cy="325" rx="220" ry="45" fill="#3b211a" opacity=".45"/>
+    <rect x="50" y="110" width="320" height="200" rx="24" fill="#f8d09a"/>
+    <path d="M50 135c65 55 95-45 160 5 55 42 90-40 160 0v50H50z" fill="#fff7e8"/>
+    <g fill="#c56d38"><circle cx="125" cy="118" r="18"/><circle cx="210" cy="100" r="18"/><circle cx="295" cy="120" r="18"/></g>
+  </g>
+  <g transform="translate(1180 400)" filter="url(#shadow)">
+    <ellipse cx="145" cy="305" rx="155" ry="38" fill="#3a211a" opacity=".45"/>
+    <path d="M35 285h220l-35-155H70z" fill="#fff4df"/>
+    <path d="M75 130c20 35 125 35 145 0" fill="#6d3828"/>
+    <rect x="100" y="50" width="90" height="85" rx="20" fill="#fff7e9"/>
+    <path d="M190 75c55-20 60 55 5 45" fill="none" stroke="#fff7e9" stroke-width="18" stroke-linecap="round"/>
+  </g>
+  <rect width="1600" height="1000" filter="url(#grain)" opacity=".42"/>
+</svg>
