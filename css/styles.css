@@ -496,7 +496,7 @@ em { color: var(--orange-300); font-weight: 500; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 28px; }
 .footer-links a { color: rgba(255,255,255,.58); font-size: 13px; transition: color .2s; }
 .footer-links a:hover { color: var(--orange-300); }
-.footer-bottom { min-height: 90px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: rgba(255,255,255,.4); font-size: 11px; }
+.footer-bottom { min-height: 90px; display: flex; align-items: center; justify-content: center; gap: 20px; color: rgba(255,255,255,.4); font-size: 11px; }
 .footer-bottom p { margin: 0; }
 
 .floating-cart {
