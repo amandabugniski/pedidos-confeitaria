@@ -1,10 +1,3 @@
-/*
-  CONFIGURAÇÃO PRINCIPAL
-  - Troque businessName pelo nome real da confeitaria.
-  - Informe o WhatsApp somente quando tiver o número, usando DDI + DDD + número.
-    Exemplo fictício: 5547999999999
-  - Enquanto estiver vazio, o WhatsApp abrirá com a mensagem pronta para escolher um contato.
-*/
 const SITE_CONFIG = {
   businessName: "Doce Café",
   whatsappNumber: "",
