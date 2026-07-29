@@ -1,0 +1,11 @@
+# WebStorm e IntelliJ
+.idea/
+*.iml
+
+# Sistemas operacionais
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários
+*.log
+*.tmp
