@@ -417,7 +417,7 @@ function renderCart() {
 
   elements.cartItems.innerHTML = state.cart.map((item) => `
     <article class="cart-item" data-cart-item="${escapeHtml(item.id)}">
-      <img class="cart-item-image" src="${escapeHtml(item.image || "assets/logo-mark.svg")}" alt="">
+      <img class="cart-item-image" src="${escapeHtml(item.image || "assets/logo-doce-cafe.png")}" alt="">
       <div class="cart-item-content">
         <p class="cart-item-name">${escapeHtml(item.name)}</p>
         <p class="cart-item-price">${formatCurrency(item.price)} por ${escapeHtml(item.unit || "unidade")}</p>
