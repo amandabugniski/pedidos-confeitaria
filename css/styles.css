@@ -104,7 +104,8 @@ button {
     background: rgba(50, 29, 23, .97);
     border-color: rgba(255, 255, 255, .1);
     box-shadow: 0 12px 30px rgba(29, 16, 12, .22);
-    backdrop-filter: blur(14px);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
 .header-content {
@@ -336,13 +337,14 @@ button {
 
 .hero-slide {
     opacity: 0;
-    transform: scale(1.04);
-    transition: opacity 1s ease, transform 7s linear;
+    transform: none;
+    transition: opacity .55s ease;
+    will-change: opacity;
 }
 
 .hero-slide.is-active {
     opacity: 1;
-    transform: scale(1);
+    transform: none;
 }
 
 .hero-slide img {
@@ -935,6 +937,8 @@ em {
 .map-pin img {
     width: 42px;
     height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .map-label {
@@ -1047,7 +1051,8 @@ em {
     visibility: hidden;
     opacity: 0;
     background: rgba(35, 18, 14, .55);
-    backdrop-filter: blur(3px);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     transition: opacity .3s, visibility .3s;
 }
 
@@ -1264,19 +1269,18 @@ em {
 
 .reveal, .reveal-left, .reveal-right {
     opacity: 0;
-    transition: opacity .75s ease, transform .75s ease;
+    transition: opacity .35s ease, transform .35s ease;
 }
 
 .reveal {
-    transform: translateY(35px);
-}
+    transform: translateY(16px);}
 
 .reveal-left {
-    transform: translateX(-45px);
+    transform: translateX(-20px);
 }
 
 .reveal-right {
-    transform: translateX(45px);
+    transform: translateX(20px);
 }
 
 .reveal.is-visible, .reveal-left.is-visible, .reveal-right.is-visible {
@@ -1662,7 +1666,8 @@ em {
     background: rgba(50, 29, 23, .98);
     border-color: rgba(255, 255, 255, .1);
     box-shadow: 0 10px 26px rgba(29, 16, 12, .18);
-    backdrop-filter: blur(14px);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
 .shop-page .brand-mark {
