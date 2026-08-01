@@ -4,11 +4,11 @@ window.CONFEITARIA_PRODUCTS = [
     name: "Bolo de chocolate",
     category: "bolos",
     categoryLabel: "Bolos e tortas",
-    description: "Massa de chocolate, recheio cremoso e cobertura de brigadeiro.",
+    description: "Massa de chocolate, recheio cremoso e cobertura de brigadeiro com morangos e cerejas.",
     price: 89.90,
     unit: "unidade",
     badge: "Mais pedido",
-    image: "assets/images/hero-2.svg"
+    image: "assets/images/bolo.jpg"
   },
   {
     id: "bolo-morango",
@@ -16,10 +16,10 @@ window.CONFEITARIA_PRODUCTS = [
     category: "bolos",
     categoryLabel: "Bolos e tortas",
     description: "Massa branca, creme leve e morangos selecionados.",
-    price: 98.00,
+    price: 70.00,
     unit: "unidade",
     badge: "Para celebrar",
-    image: "assets/images/hero-2.svg"
+    image: "assets/images/bolo-morango.jpg"
   },
   {
     id: "torta-limao",
@@ -27,10 +27,10 @@ window.CONFEITARIA_PRODUCTS = [
     category: "bolos",
     categoryLabel: "Bolos e tortas",
     description: "Base crocante, creme de limão e cobertura delicada.",
-    price: 65.00,
+    price: 50.00,
     unit: "unidade",
     badge: "Clássico da casa",
-    image: "assets/images/hero-3.svg"
+    image: "assets/images/torta-limao.jpg"
   },
   {
     id: "banoffee",
@@ -38,10 +38,10 @@ window.CONFEITARIA_PRODUCTS = [
     category: "bolos",
     categoryLabel: "Bolos e tortas",
     description: "Banana, doce de leite, creme e base crocante.",
-    price: 72.00,
+    price: 65.00,
     unit: "unidade",
     badge: "Irresistível",
-    image: "assets/images/hero-3.svg"
+    image: "assets/images/banoffee.jpg"
   },
   {
     id: "brigadeiros-12",
@@ -52,7 +52,7 @@ window.CONFEITARIA_PRODUCTS = [
     price: 36.00,
     unit: "caixa",
     badge: "Presenteável",
-    image: "assets/images/hero-4.svg"
+    image: "assets/images/brigadeiros.jpg"
   },
   {
     id: "brownies-6",
@@ -63,7 +63,7 @@ window.CONFEITARIA_PRODUCTS = [
     price: 45.00,
     unit: "caixa",
     badge: "Feito no dia",
-    image: "assets/images/hero-4.svg"
+    image: "assets/images/brownie.jpg"
   },
   {
     id: "docinhos-50",
@@ -74,7 +74,7 @@ window.CONFEITARIA_PRODUCTS = [
     price: 78.00,
     unit: "kit",
     badge: "Para compartilhar",
-    image: "assets/images/hero-4.svg"
+    image: "assets/images/brigadeiro-beijin.jpg"
   },
   {
     id: "pao-caseiro",
@@ -85,7 +85,7 @@ window.CONFEITARIA_PRODUCTS = [
     price: 16.00,
     unit: "unidade",
     badge: "Clássico da casa",
-    image: "assets/images/hero-1.svg"
+    image: "assets/images/paozinho.jpg"
   },
   {
     id: "pao-queijo-10",
@@ -96,7 +96,7 @@ window.CONFEITARIA_PRODUCTS = [
     price: 22.00,
     unit: "pacote",
     badge: "Fresquinho",
-    image: "assets/images/hero-1.svg"
+    image: "assets/images/pao-de-queijo.jpg"
   },
   {
     id: "croissant",
@@ -107,7 +107,7 @@ window.CONFEITARIA_PRODUCTS = [
     price: 9.50,
     unit: "unidade",
     badge: "Feito no dia",
-    image: "assets/images/hero-1.svg"
+    image: "assets/images/croissant.jpg"
   },
   {
     id: "cento-salgados",
@@ -118,7 +118,7 @@ window.CONFEITARIA_PRODUCTS = [
     price: 89.00,
     unit: "cento",
     badge: "Para festas",
-    image: "assets/images/hero-1.svg"
+    image: "assets/images/salgadinhos.jpg"
   },
   {
     id: "empada-frango",
@@ -129,7 +129,7 @@ window.CONFEITARIA_PRODUCTS = [
     price: 8.50,
     unit: "unidade",
     badge: "Clássico da casa",
-    image: "assets/images/hero-1.svg"
+    image: "assets/images/empada.jpg"
   },
   {
     id: "quiche-alho-poro",
@@ -140,18 +140,18 @@ window.CONFEITARIA_PRODUCTS = [
     price: 38.00,
     unit: "unidade",
     badge: "Para compartilhar",
-    image: "assets/images/hero-3.svg"
+    image: "assets/images/quiche.jpg"
   },
   {
     id: "kit-cafe-tarde",
     name: "Kit café da tarde",
     category: "kits",
     categoryLabel: "Kits e cestas",
-    description: "Pão caseiro, bolo, docinhos e acompanhamentos.",
+    description: "Croissant, suco, docinhos e acompanhamentos.",
     price: 69.00,
     unit: "kit",
     badge: "Para compartilhar",
-    image: "assets/images/hero-4.svg"
+    image: "assets/images/kit-cafe.jpg"
   },
   {
     id: "cesta-cafe-manha",
@@ -162,17 +162,17 @@ window.CONFEITARIA_PRODUCTS = [
     price: 119.00,
     unit: "cesta",
     badge: "Presenteável",
-    image: "assets/images/hero-4.svg"
+    image: "assets/categoria/kits-cestas.jpg"
   },
   {
     id: "caixa-presente",
-    name: "Caixa presente doce",
+    name: "Caixa presente donuts",
     category: "kits",
     categoryLabel: "Kits e cestas",
-    description: "Brownies, brigadeiros e mini bolo em uma caixa especial.",
-    price: 89.00,
+    description: "Donuts em uma caixa especial.",
+    price: 50.00,
     unit: "caixa",
     badge: "Com carinho",
-    image: "assets/images/hero-2.svg"
+    image: "assets/images/donuts.jpg"
   }
 ];
