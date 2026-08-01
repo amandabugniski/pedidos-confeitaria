@@ -3,7 +3,7 @@ const SITE_CONFIG = {
   whatsappNumber: "",
   currency: "BRL",
   locale: "pt-BR",
-  carouselInterval: 5500,
+  carouselInterval: 3500,
   cartStorageKey: "doce-cafe-cart",
 };
 
@@ -14,6 +14,7 @@ const PRODUCTS = Array.isArray(window.CONFEITARIA_PRODUCTS)
 const state = {
   currentSlide: 0,
   carouselTimer: null,
+  carouselVisible: true,
   activeCategory: "todos",
   searchTerm: "",
   cart: loadCart(),
@@ -62,12 +63,21 @@ function applyBusinessConfiguration() {
 }
 
 function initializeHeader() {
+  let framePending = false;
+
   const updateHeader = () => {
     elements.header?.classList.toggle("is-scrolled", window.scrollY > 24);
+    framePending = false;
+  };
+
+  const requestHeaderUpdate = () => {
+    if (framePending) return;
+    framePending = true;
+    window.requestAnimationFrame(updateHeader);
   };
 
   updateHeader();
-  window.addEventListener("scroll", updateHeader, { passive: true });
+  window.addEventListener("scroll", requestHeaderUpdate, { passive: true });
 }
 
 function initializeMobileMenu() {
@@ -133,6 +143,15 @@ function initializeCarousel() {
     }
   }, { passive: true });
 
+  if (hero && "IntersectionObserver" in window) {
+    const carouselObserver = new IntersectionObserver((entries) => {
+      state.carouselVisible = entries[0]?.isIntersecting ?? true;
+      state.carouselVisible ? startCarousel() : stopCarousel();
+    }, { threshold: 0.05 });
+
+    carouselObserver.observe(hero);
+  }
+
   document.addEventListener("visibilitychange", () => {
     document.hidden ? stopCarousel() : startCarousel();
   });
@@ -160,6 +179,7 @@ function showSlide(index) {
 
 function startCarousel() {
   stopCarousel();
+  if (document.hidden || !state.carouselVisible) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   state.carouselTimer = window.setInterval(() => {
     showSlide(state.currentSlide + 1);
@@ -253,7 +273,7 @@ function renderStoreProducts() {
   elements.productsGrid.innerHTML = filteredProducts.map((product) => `
     <article class="store-product-card" data-store-product="${escapeHtml(product.id)}">
       <div class="store-product-image">
-        <img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}">
+        <img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" loading="lazy" decoding="async" width="1200" height="900">
         <span>${escapeHtml(product.badge)}</span>
       </div>
       <div class="store-product-content">
@@ -417,7 +437,7 @@ function renderCart() {
 
   elements.cartItems.innerHTML = state.cart.map((item) => `
     <article class="cart-item" data-cart-item="${escapeHtml(item.id)}">
-      <img class="cart-item-image" src="${escapeHtml(item.image || "assets/logo-doce-cafe.png")}" alt="">
+      <img class="cart-item-image" src="${escapeHtml(item.image || "assets/logo-doce-cafe.png")}" alt="" loading="lazy" decoding="async">
       <div class="cart-item-content">
         <p class="cart-item-name">${escapeHtml(item.name)}</p>
         <p class="cart-item-price">${formatCurrency(item.price)} por ${escapeHtml(item.unit || "unidade")}</p>

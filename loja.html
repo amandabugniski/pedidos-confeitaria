@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/logo-doce-cafe.png" type="image/png">
+  <link rel="preload" as="image" href="assets/images/peca-online.webp" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/produtos.js" defer></script>
   <script src="js/script.js" defer></script>
@@ -21,7 +22,7 @@
   <header class="site-header is-scrolled" id="cabecalho">
     <div class="container header-content">
       <a class="brand" href="index.html" aria-label="Voltar para a página inicial">
-        <img src="assets/logo-doce-cafe.png" alt="" class="brand-mark">
+        <img src="assets/logo-doce-cafe.png" alt="" class="brand-mark" width="256" height="256" decoding="async">
         <span class="brand-copy">
           <strong data-business-name>Sua Confeitaria</strong>
           <small>feito artesanalmente</small>
@@ -56,7 +57,7 @@
 
   <main id="conteudo">
     <section class="shop-hero">
-      <div class="shop-hero-image"><img src="assets/images/peca-online.jpg" alt="Produtos artesanais da confeitaria"></div>
+      <div class="shop-hero-image"><img src="assets/images/peca-online.webp" alt="Produtos artesanais da confeitaria" width="1920" height="1280" decoding="async" fetchpriority="high"></div>
       <div class="shop-hero-overlay"></div>
       <div class="container shop-hero-content">
         <p class="eyebrow">Monte seu pedido</p>
@@ -117,7 +118,7 @@
   <footer class="site-footer">
     <div class="container footer-top">
       <a class="brand brand-footer" href="index.html">
-        <img src="assets/logo-doce-cafe.png" alt="" class="brand-mark">
+        <img src="assets/logo-doce-cafe.png" alt="" class="brand-mark" width="256" height="256" decoding="async">
         <span class="brand-copy"><strong data-business-name>Sua Confeitaria</strong><small>feito artesanalmente</small></span>
       </a>
       <div class="footer-links">

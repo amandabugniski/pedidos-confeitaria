@@ -338,8 +338,7 @@ button {
 .hero-slide {
     opacity: 0;
     transform: none;
-    transition: opacity .55s ease;
-    will-change: opacity;
+    transition: opacity .45s ease;
 }
 
 .hero-slide.is-active {

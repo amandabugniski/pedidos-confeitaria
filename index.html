@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/logo-doce-cafe.png" type="image/png">
+  <link rel="preload" as="image" href="assets/images/hero-1.webp" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/produtos.js" defer></script>
   <script src="js/script.js" defer></script>
@@ -21,7 +22,7 @@
   <header class="site-header" id="cabecalho">
     <div class="container header-content">
       <a class="brand" href="#inicio" aria-label="Ir para o início">
-        <img src="assets/logo-doce-cafe.png" alt="" class="brand-mark">
+        <img src="assets/logo-doce-cafe.png" alt="" class="brand-mark" width="256" height="256" decoding="async">
         <span class="brand-copy">
           <strong data-business-name>Doce Café</strong>
           <small>feito artesanalmente</small>
@@ -58,16 +59,16 @@
     <section class="hero" id="inicio" aria-roledescription="carrossel" aria-label="Destaques da confeitaria">
       <div class="hero-slides">
         <article class="hero-slide is-active" data-slide aria-hidden="false">
-          <img src="assets/images/hero-1.jpg" alt="Pães e produtos artesanais">
+          <img src="assets/images/hero-1.webp" alt="Pães e produtos artesanais" width="1920" height="1312" decoding="async" fetchpriority="high">
         </article>
         <article class="hero-slide" data-slide aria-hidden="true">
-          <img src="assets/images/hero-2.jpg" alt="Bolo de chocolate">
+          <img src="assets/images/hero-2.webp" alt="Bolo de chocolate" width="1920" height="1540" decoding="async" fetchpriority="low">
         </article>
         <article class="hero-slide" data-slide aria-hidden="true">
-          <img src="assets/images/hero-3.jpg" alt="Cafés e bolinho">
+          <img src="assets/images/hero-3.webp" alt="Cafés e bolinho" width="1920" height="1280" decoding="async" fetchpriority="low">
         </article>
         <article class="hero-slide" data-slide aria-hidden="true">
-          <img src="assets/images/hero-4.jpg" alt="Docinhos, brigadeiro">
+          <img src="assets/images/hero-4.webp" alt="Docinhos, brigadeiro" width="1920" height="1280" decoding="async" fetchpriority="low">
         </article>
         <div class="hero-overlay"></div>
       </div>
@@ -113,42 +114,42 @@
 
         <div class="category-grid">
           <a class="category-card reveal" href="loja.html?categoria=paes" aria-label="Ver produtos da categoria Pães">
-            <img src="assets/categoria/paes.jpg" alt="Pães artesanais">
+            <img src="assets/categoria/paes.webp" alt="Pães artesanais" width="1200" height="800" decoding="async" loading="lazy">
             <div class="category-shade"></div>
             <span class="category-badge">Clássico da casa</span>
             <div class="category-copy"><h3>Pães</h3><span>Ver produtos →</span></div>
           </a>
 
           <a class="category-card reveal" href="loja.html?categoria=bolos" aria-label="Ver bolos e tortas">
-            <img src="assets/categoria/bolos-tortas.jpg" alt="Bolos e tortas">
+            <img src="assets/categoria/bolos-tortas.webp" alt="Bolos e tortas" width="1200" height="800" decoding="async" loading="lazy">
             <div class="category-shade"></div>
             <span class="category-badge">Para celebrar</span>
             <div class="category-copy"><h3>Bolos e Tortas</h3><span>Ver produtos →</span></div>
           </a>
 
           <a class="category-card reveal" href="loja.html?categoria=doces" aria-label="Ver doces">
-            <img src="assets/categoria/doces.jpg" alt="Doces">
+            <img src="assets/categoria/doces.webp" alt="Doces" width="1200" height="830" decoding="async" loading="lazy">
             <div class="category-shade"></div>
             <span class="category-badge">Irresistíveis</span>
             <div class="category-copy"><h3>Doces</h3><span>Ver produtos →</span></div>
           </a>
 
           <a class="category-card reveal" href="loja.html?categoria=salgados" aria-label="Ver salgados">
-            <img src="assets/categoria/salgados.jpg" alt="Salgados">
+            <img src="assets/categoria/salgados.webp" alt="Salgados" width="1200" height="802" decoding="async" loading="lazy">
             <div class="category-shade"></div>
             <span class="category-badge">Para compartilhar</span>
             <div class="category-copy"><h3>Salgados</h3><span>Ver produtos →</span></div>
           </a>
 
           <a class="category-card reveal" href="loja.html?categoria=kits" aria-label="Ver kits e cestas">
-            <img src="assets/categoria/kits-cestas.jpg" alt="Kits e cestas">
+            <img src="assets/categoria/kits-cestas.webp" alt="Kits e cestas" width="1200" height="800" decoding="async" loading="lazy">
             <div class="category-shade"></div>
             <span class="category-badge">Presenteável</span>
             <div class="category-copy"><h3>Kits e Cestas</h3><span>Ver produtos →</span></div>
           </a>
 
           <a class="category-card reveal" href="#" data-whatsapp data-message="Olá! Gostaria de solicitar um orçamento para uma encomenda personalizada.">
-            <img src="assets/categoria/personalizados.jpg" alt="Encomenda personalizada">
+            <img src="assets/categoria/personalizados.webp" alt="Encomenda personalizada" width="1200" height="800" decoding="async" loading="lazy">
             <div class="category-shade"></div>
             <span class="category-badge">Do seu jeito</span>
             <div class="category-copy"><h3>Personalizados</h3><span>Solicitar orçamento →</span></div>
@@ -164,7 +165,7 @@
     <section class="section story-section" id="sobre">
       <div class="container story-grid">
         <div class="story-image reveal-left">
-          <img src="assets/images/doce-cafe-2.jpg" alt="Ambiente acolhedor da confeitaria">
+          <img src="assets/images/doce-cafe-2.webp" alt="Ambiente acolhedor da confeitaria" width="1050" height="1400" decoding="async" loading="lazy">
           <div class="story-stamp"><span>feito com</span><strong>amor</strong></div>
         </div>
         <div class="story-copy reveal-right">
@@ -179,7 +180,7 @@
     </section>
 
     <section class="order-banner">
-      <div class="order-banner-bg"><img src="assets/images/pedido.jpg" alt=""></div>
+      <div class="order-banner-bg"><img src="assets/images/pedido.webp" alt="" width="1920" height="1272" decoding="async" loading="lazy"></div>
       <div class="container order-banner-content reveal">
         <p class="eyebrow">Seu momento merece um sabor especial</p>
         <h2>Monte seu pedido do seu jeito</h2>
@@ -221,7 +222,7 @@
           <div class="map-road road-two"></div>
           <div class="map-road road-three"></div>
           <div class="map-pin">
-            <img src="assets/logo-doce-cafe.png" alt="">
+            <img src="assets/logo-doce-cafe.png" alt="" width="256" height="256" decoding="async">
             <span data-business-name>Doce Café</span>
           </div>
           <span class="map-label label-one">Rua das Flores</span>
@@ -234,7 +235,7 @@
   <footer class="site-footer">
     <div class="container footer-top">
       <a class="brand brand-footer" href="#inicio">
-        <img src="assets/logo-doce-cafe.png" alt="" class="brand-mark">
+        <img src="assets/logo-doce-cafe.png" alt="" class="brand-mark" width="256" height="256" decoding="async">
         <span class="brand-copy"><strong data-business-name>Doce Café</strong><small>feito artesanalmente</small></span>
       </a>
       <div class="footer-links">
