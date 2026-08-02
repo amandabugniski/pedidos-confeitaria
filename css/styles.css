@@ -1000,7 +1000,7 @@ em {
     min-height: 90px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
     color: rgba(255, 255, 255, .4);
     font-size: 11px;
@@ -2407,4 +2407,22 @@ em {
 .map-pin img {
     border-radius: 50%;
     object-fit: cover;
+}
+
+.developer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, .55);
+    font-size: 11px;
+    transition: color .2s ease;
+}
+
+.developer-link span {
+    color: var(--orange-300);
+    font-weight: 700;
+}
+
+.developer-link:hover {
+    color: var(--white);
 }
