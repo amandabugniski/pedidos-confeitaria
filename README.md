@@ -1,53 +1,46 @@
-# Doce Café confeitaria — site + pedidos online
+# Doce Café — Confeitaria e Pedidos Online
 
-Projeto estático e responsivo em HTML, CSS e JavaScript. A página inicial funciona como vitrine institucional, enquanto `loja.html` apresenta os produtos, quantidades, carrinho e finalização pelo WhatsApp.
+Site responsivo de uma confeitaria fictícia, desenvolvido com HTML, CSS e JavaScript.
 
-## Estrutura
+O projeto possui uma página institucional, catálogo de produtos, filtros por categoria, carrinho de compras e finalização do pedido pelo WhatsApp.
 
-```text
-confeitaria-integrada/
-├── index.html           # página institucional
-├── loja.html            # cardápio e pedidos online
-├── produtos.js          # produtos, categorias, preços e descrições
-├── script.js            # carrossel, filtros, carrinho e WhatsApp
-├── styles.css           # visual completo e responsividade
-├── assets/
-│   ├── logo-mark.svg
-│   └── images/
-├── vercel.json
-└── README.md
-```
+## Demonstração
 
-## O que foi feito
+🔗 [Acessar projeto online](https://seu-projeto.vercel.app)
 
-- cabeçalho fixo durante a rolagem;
-- carrossel automático com quatro imagens;
-- vitrine de categorias semelhante à organização da referência;
-- botão **Peça online** no cabeçalho;
-- página separada de produtos;
-- filtros por categoria e pesquisa;
-- seletor de quantidade em cada produto;
-- carrinho compartilhado entre as duas páginas;
-- alteração e remoção de quantidades no carrinho;
-- total automático em reais;
-- dados de retirada/entrega, data e observações;
-- pedido formatado e enviado pelo WhatsApp;
-- produtos personalizados direcionados diretamente ao WhatsApp;
+![Prévia do projeto](assets/images/preview-doce-cafe.gif)
+
+## Funcionalidades
+
+- página inicial institucional;
+- carrossel automático de imagens;
+- vitrine de categorias;
+- catálogo com pesquisa e filtros;
+- seleção de quantidade;
+- carrinho de compras;
+- cálculo automático do valor total;
 - armazenamento do carrinho no navegador;
-- layout responsivo para computador, tablet e celular;
-- endereço demonstrativo e rodapé personalizado.
+- escolha entre retirada e entrega;
+- validação da data do pedido;
+- observações adicionais;
+- finalização do pedido pelo WhatsApp;
+- layout responsivo para computador, tablet e celular.
 
+## Tecnologias
 
-## Executar localmente
+- HTML
+- CSS
+- JavaScript
+- Vercel
 
-Na pasta do projeto, execute:
+### Executar localmente
 
-```bash
-python -m http.server 5500
-```
+1. Clone o repositório ou baixe pelo botão **Code → Download ZIP**.
+2. Extraia os arquivos, caso tenha baixado o ZIP.
+3. Abra o arquivo `index.html` no navegador.
 
-Depois acesse:
+Não é necessário instalar dependências, configurar banco de dados ou iniciar um servidor.
 
-```text
-http://localhost:5500
-```
+## Observação
+
+Este é um projeto demonstrativo. Os produtos, preços, endereço e dados comerciais utilizados são fictícios.
