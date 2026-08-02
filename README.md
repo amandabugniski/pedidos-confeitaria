@@ -6,7 +6,7 @@ O projeto possui uma página institucional, catálogo de produtos, filtros por c
 
 ## Demonstração
 
-🔗 [Acessar projeto online](https://seu-projeto.vercel.app)
+🔗 [Acessar projeto online](https://doce-cafe-confeitaria.vercel.app/)
 
 ![Prévia do projeto](assets/doce-cafe.gif)
 
