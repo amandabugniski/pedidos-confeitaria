@@ -8,7 +8,7 @@ O projeto possui uma página institucional, catálogo de produtos, filtros por c
 
 🔗 [Acessar projeto online](https://seu-projeto.vercel.app)
 
-![Prévia do projeto](assets/images/preview-doce-cafe.gif)
+![Prévia do projeto](assets/doce-cafe.gif)
 
 ## Funcionalidades
 
