@@ -5,7 +5,7 @@ Site responsivo de uma confeitaria fictícia, desenvolvido com HTML, CSS e JavaS
 O projeto possui uma página institucional, catálogo de produtos, filtros por categoria, carrinho de compras e finalização do pedido pelo WhatsApp.
 
 ## Demonstração
-## Site na Vercel:
+** Site publicado na Vercel:
 🔗 [Acessar projeto online](https://doce-cafe-confeitaria.vercel.app/)
 
 ![Prévia do projeto](assets/doce-cafe.gif)
