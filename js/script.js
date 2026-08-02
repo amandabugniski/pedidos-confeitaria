@@ -4,12 +4,14 @@ const SITE_CONFIG = {
   currency: "BRL",
   locale: "pt-BR",
   carouselInterval: 3500,
+  minimumAdvanceDays: 1,
+  maximumBookingDays: 30,
   cartStorageKey: "doce-cafe-cart",
 };
 
 const PRODUCTS = Array.isArray(window.CONFEITARIA_PRODUCTS)
-  ? window.CONFEITARIA_PRODUCTS
-  : [];
+    ? window.CONFEITARIA_PRODUCTS
+    : [];
 
 const state = {
   currentSlide: 0,
@@ -46,6 +48,7 @@ function initialize() {
   initializeCarousel();
   initializeWhatsAppLinks();
   initializeStore();
+  initializeDesiredDateFields();
   initializeCart();
   initializeRevealAnimations();
   renderCart();
@@ -57,8 +60,8 @@ function applyBusinessConfiguration() {
   });
 
   const pageTitle = document.body.classList.contains("shop-page")
-    ? `Peça online | ${SITE_CONFIG.businessName}`
-    : `${SITE_CONFIG.businessName} | Feito com carinho`;
+      ? `Peça online | ${SITE_CONFIG.businessName}`
+      : `${SITE_CONFIG.businessName} | Feito com carinho`;
   document.title = pageTitle;
 }
 
@@ -125,10 +128,6 @@ function initializeCarousel() {
   });
 
   const hero = document.querySelector(".hero");
-  hero?.addEventListener("mouseenter", stopCarousel);
-  hero?.addEventListener("mouseleave", startCarousel);
-  hero?.addEventListener("focusin", stopCarousel);
-  hero?.addEventListener("focusout", startCarousel);
 
   let touchStartX = 0;
   hero?.addEventListener("touchstart", (event) => {
@@ -180,7 +179,6 @@ function showSlide(index) {
 function startCarousel() {
   stopCarousel();
   if (document.hidden || !state.carouselVisible) return;
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   state.carouselTimer = window.setInterval(() => {
     showSlide(state.currentSlide + 1);
   }, SITE_CONFIG.carouselInterval);
@@ -330,6 +328,60 @@ function bindStoreProductActions() {
   });
 }
 
+function initializeDesiredDateFields() {
+  const dateInputs = document.querySelectorAll("[data-desired-date]");
+  if (!dateInputs.length) return;
+
+  const today = new Date();
+  const minimumDate = addDays(today, SITE_CONFIG.minimumAdvanceDays);
+  const maximumDate = addDays(today, SITE_CONFIG.maximumBookingDays);
+  const minimumValue = formatDateForInput(minimumDate);
+  const maximumValue = formatDateForInput(maximumDate);
+
+  dateInputs.forEach((input) => {
+    input.min = minimumValue;
+    input.max = maximumValue;
+    input.title = `Escolha uma data entre ${formatDate(minimumValue)} e ${formatDate(maximumValue)}.`;
+
+    input.addEventListener("change", () => {
+      validateDesiredDate(input);
+    });
+  });
+}
+
+function validateDesiredDate(input) {
+  input.setCustomValidity("");
+
+  if (!input.value) return true;
+
+  if (input.min && input.value < input.min) {
+    input.setCustomValidity(`Escolha uma data a partir de ${formatDate(input.min)}.`);
+    return false;
+  }
+
+  if (input.max && input.value > input.max) {
+    input.setCustomValidity(`Escolha uma data até ${formatDate(input.max)}.`);
+    return false;
+  }
+
+  return true;
+}
+
+function addDays(date, days) {
+  return new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate() + days
+  );
+}
+
+function formatDateForInput(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
 function initializeCart() {
   document.querySelectorAll("[data-open-cart]").forEach((button) => {
     button.addEventListener("click", openCart);
@@ -467,8 +519,14 @@ function checkoutCart() {
 
   const customerName = document.querySelector("[data-customer-name]")?.value.trim();
   const fulfillment = document.querySelector("[data-fulfillment]")?.value || "A combinar";
-  const desiredDate = document.querySelector("[data-desired-date]")?.value;
+  const desiredDateInput = document.querySelector("[data-desired-date]");
+  const desiredDate = desiredDateInput?.value;
   const notes = document.querySelector("[data-order-notes]")?.value.trim();
+
+  if (desiredDateInput && !validateDesiredDate(desiredDateInput)) {
+    desiredDateInput.reportValidity();
+    return;
+  }
   const total = state.cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   const items = state.cart.map((item) => {
@@ -512,12 +570,12 @@ function loadCart() {
     if (!Array.isArray(storedCart)) return [];
 
     return storedCart.filter((item) => (
-      item &&
-      typeof item.id === "string" &&
-      typeof item.name === "string" &&
-      Number.isFinite(Number(item.price)) &&
-      Number.isFinite(Number(item.quantity)) &&
-      Number(item.quantity) > 0
+        item &&
+        typeof item.id === "string" &&
+        typeof item.name === "string" &&
+        Number.isFinite(Number(item.price)) &&
+        Number.isFinite(Number(item.quantity)) &&
+        Number(item.quantity) > 0
     )).map((item) => ({
       id: item.id,
       name: item.name,
@@ -573,9 +631,9 @@ function showToast(message) {
 
 function escapeHtml(value) {
   return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
 }
