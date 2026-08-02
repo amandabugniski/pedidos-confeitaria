@@ -12,7 +12,7 @@ O projeto possui uma página institucional, catálogo de produtos, filtros por c
 
 ## Funcionalidades
 
-- página inicial institucional;
+- página inicial;
 - carrossel automático de imagens;
 - vitrine de categorias;
 - catálogo com pesquisa e filtros;
